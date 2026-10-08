@@ -1,0 +1,30 @@
+# Credenciais e configurações privadas
+.env
+.env.*
+*.pem
+*.key
+*.p12
+# Nunca incluir bases comerciais nem mensagens originais
+*.xlsx
+*.xls
+*.xlsm
+*.msg
+*.eml
+*.csv
+imports/
+uploads/
+private/
+# Estado e exportações locais
+*backup*.json
+*avaliacao*.json
+# Arquivos temporários
+__pycache__/
+*.pyc
+node_modules/
+.DS_Store
+Thumbs.db
+# Builds locais e evidências de testes
+dist/
+tests/screens/
+*browser-report*.json
+.ci-venv/

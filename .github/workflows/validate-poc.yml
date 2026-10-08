@@ -1,0 +1,34 @@
+name: Validar PoC
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Obter exatamente o commit em teste
+        run: |
+          git init .
+          git remote add origin "https://github.com/${GITHUB_REPOSITORY}.git"
+          git fetch --depth=1 origin "$GITHUB_SHA"
+          git checkout --detach FETCH_HEAD
+      - name: Testar validação e precificação
+        run: node tests/core.test.js
+      - name: Conferir geração do HTML independente
+        run: python3 build.py
+      - name: Preparar testes de navegador
+        run: |
+          python3 -m venv .ci-venv
+          .ci-venv/bin/python -m pip install --disable-pip-version-check playwright==1.57.0
+          if ! command -v google-chrome && ! command -v chromium; then
+            .ci-venv/bin/python -m playwright install --with-deps chromium
+          fi
+      - name: Testar navegação, cotação, contratação simulada e entrega
+        run: .ci-venv/bin/python tests/browser.test.py

@@ -1,0 +1,47 @@
+CLEARTECH | APRESENTAÇÃO DA PROVA DE CONCEITO v0.1
+
+OBJETIVO
+Validar a jornada comercial e operacional antes de concluir o planejamento e iniciar a implantação real.
+
+ABERTURA
+Esta é uma demonstração. O visual, a navegação e os cálculos podem ser testados. Valores e operações são fictícios. Não há envio de e-mails, acesso a bases de enriquecimento ou cobrança real.
+
+1. PORTAL PÚBLICO
+Apresentar a oferta, os serviços e a entrada para a cotação.
+
+2. COTAÇÃO
+Clicar em “Simular uma cotação” e “Usar exemplo”.
+Conferir os 12.000 registros do arquivo de teste e os 10.800 elegíveis.
+Mostrar as exclusões e o detalhamento progressivo do preço.
+
+3. PROPOSTA E CONCORDÂNCIA
+Gerar uma proposta de teste. Ativar a conta demonstrativa e simular o aceite.
+Mostrar o quadro contratual e a exigência de poderes de representação.
+Simular a concordância. Destacar que a contratação ainda depende do comercial.
+
+4. OPERAÇÃO
+Em “Acessar gestão”, abrir “Pedidos e entregas”.
+Abrir o pedido criado e simular a formalização.
+Conferir a distribuição técnica e o prazo.
+Registrar uma pendência, simular uma resposta e resolver a pendência.
+Concluir a entrega de teste e baixar o resumo pelo portal do cliente.
+
+5. PROSPECÇÃO E GESTÃO
+Abrir “Leads e negociações” e demonstrar o histórico.
+Em “Campanhas”, mostrar remetentes, intervalos e aprovação.
+Testar uma resposta para demonstrar a classificação e o rascunho sujeito a aprovação humana.
+Mostrar os indicadores e a separação entre contratado, faturado e recebido.
+
+6. CONFIGURAÇÕES
+Editar uma faixa fictícia. Mostrar que propostas anteriores preservam o preço.
+Editar um texto do portal, publicar localmente e restaurar a versão.
+
+7. AVALIAÇÃO
+Abrir “Validação da diretoria”.
+Registrar o que foi aprovado e o que precisa de ajustes.
+Exportar a avaliação para orientar a próxima etapa. As observações ficam no navegador, sem sincronização entre usuários.
+
+DECISÕES A RETOMAR DEPOIS
+Impacto das pendências nos prazos; tabela comercial definitiva; materiais técnicos; minutas aprovadas; dados, infraestrutura e integrações; segurança, autenticação e processamento de produção.
+
+NÃO UTILIZAR COMO AMBIENTE DE PRODUÇÃO. USE SOMENTE DADOS FICTÍCIOS.

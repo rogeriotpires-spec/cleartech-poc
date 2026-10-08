@@ -42,10 +42,15 @@ jobs:
               if element.tag.split('}')[-1].lower() in ('script', 'foreignobject'):
                   raise RuntimeError('Elemento ativo não permitido no SVG.')
               for key, value in element.attrib.items():
-                  if key.lower().split('}')[-1].startswith('on') or 'javascript:' in value.lower():
+                  name = key.lower().split('}')[-1]
+                  if name.startswith('on') or 'javascript:' in value.lower():
                       raise RuntimeError('Conteúdo ativo não permitido no SVG.')
-                  if key.split('}')[-1] == 'href' and value and not value.startswith('#'):
-                      raise RuntimeError('Referência externa não permitida no SVG.')
+                  if name == 'href' and value and not value.startswith('#'):
+                      if not value.startswith('data:image/png;base64,'):
+                          raise RuntimeError('Referência externa não permitida no SVG.')
+                      image = base64.b64decode(value.split(',', 1)[1])
+                      if not image.startswith(b'\x89PNG\r\n\x1a\n'):
+                          raise RuntimeError('Imagem incorporada inválida.')
           headers = {
               'Authorization': 'Bearer ' + os.environ['GH_TOKEN'],
               'Accept': 'application/vnd.github+json',
